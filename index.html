@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" id="7-tab" data-toggle="tab" href="#" role="tab" aria-controls="profile" aria-selected="false">Kelas 7</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="8-tab" data-toggle="tab" href="#" role="tab" aria-controls="contact" aria-selected="false">Kelas 8</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="9-tab" data-toggle="tab" href="#" role="tab" aria-controls="contact" aria-selected="false">Kelas 9</a>
+                </li>
+            </ul>  
+            
+                <ul class="nav nav-tabs" style="background: rgb(201 199 255)" id="myTab" role="tablist">
+                    <li class="nav-item">
+                    <a class="nav-link" id="sesi1-tab" data-toggle="tab" href="#" role="tab" aria-controls="profile" aria-selected="false">Sesi 1</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" id="sesi2-tab" data-toggle="tab" href="#" role="tab" aria-controls="profile" aria-selected="false">Sesi 2</a>
+                    </li>
+                </ul>
+            
+            <div id="sesi1" class="text-center">
+                Sesi 1 Jam 07:00 <i style="float: right;" class="animate__animated animate__flash animate__infinite	infinite
+"> Di catet soal butuh token</i>
+                <div id="info1" class="container jumbotron">Absen Sesi 1 Belum dibuka</div>
+                <div class="infoAbsen1">
+                     
+                    <div  id="7">
+                        
+                        <button id="token7" onclick="getToken(7)" class="btn btn-sm btn-danger" style="float:right">Klik Token</button>
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScz3UsSt6_CkwIHPHk29K9MtcxeTT-_Y5xRLpKmxPcaJg_Ffg/viewform?embedded=true" width="100%" height="550" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    </div>
+                    <div  id="8">
+                        <button id="token8" onclick="getToken(8)" class="btn btn-sm btn-danger" style="float:right">Klik Token</button>
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUjCG1HJRFr9BW0EmgoCupaDmTegQ7bnaO4c9jVPtUyCL_tw/viewform?embedded=true" width="100%" height="550px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    </div>
+                    <div  id="9">
+                        <button id="token9" onclick="getToken(9)" class="btn btn-sm btn-danger" style="float:right">Klik Token</button>
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc8NlrIasJR3INie-3Sv0Af-szJWF_sTcIz0mGDa4qEskDPvw/viewform?embedded=true" width="100%" height="550px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    </div>
+                </div>
+        </div>
+
+        <!-- sesi 2 -->
+        <div id="sesi2" class="text-center">
+                Sesi 2 Jam 09:00 <i style="float: right;" class="animate__animated animate__flash animate__infinite	infinite
+"> Di catet soal butuh token</i>
+                <div id="info2" class="container jumbotron">Absen Sesi 2 Belum dibuka</div>
+                <div class="infoAbsen2">
+                    
+                    <div  id="72">
+                        <button id="token7a" onclick="getToken(7)" class="btn btn-sm btn-danger" style="float:right">Klik Token</button>
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfGxDDdc0nGgbGbKj3J_brDzBqkyjxhtFD6DAyUi58a-mVgRQ/viewform?embedded=true" width="100%" height="395" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    </div>
+                    <div  id="82">
+                        <button id="token8b" onclick="getToken(8)" class="btn btn-sm btn-danger" style="float:right">Klik Token</button>
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSemj4tfiroV1oO6US1PEzT0xmGnUwKLk6TkSacV4kMH3KmeKQ/viewform?embedded=true" width="100%" height="395" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    </div>
+                    <div  id="92">
+                        <button id="token9b" onclick="getToken(9)" class="btn btn-sm btn-danger" style="float:right">Klik Token</button>
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeuWnfx9sSZ2pHbu-9wmgUhtt5L5WQGdJUGxK2FynF2OJFrmA/viewform?embedded=true" width="100%" height="395" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    </div>
+                </div>
+        </div>
+       
+     </div>
+    <script>
+        var waktu = new Date();
+        var tgl = waktu.getDate();
+        var sesi = 0
+        $('#sesi1').show();
+        $('#sesi2').hide();
+        console.log(tgl)
+        var sesiToken = [
+            {'tgl':20,'sesi':[{'kelas':7,'token':['A1234','AZZZ1']},
+                            {'kelas':8,'token':['B8881','8HHHHL']},
+                            {'kelas':9,'token':['C2323','9WKWK1']}]},
+            {'tgl':21,'sesi':[{'kelas':7,'token':['A5534','ADDD1']},
+                            {'kelas':8,'token':['B9881','8GGGL']},
+                            {'kelas':9,'token':['C2003','9MMM1']}]},
+            {'tgl':22,'sesi':[{'kelas':7,'token':['A3331','ABAB1']},
+                            {'kelas':8,'token':['B7891','8NNN1']},
+                            {'kelas':9,'token':['C2121','9DEDE1']}]},
+            {'tgl':23,'sesi':[{'kelas':7,'token':['A5551','AGTA1']},
+                            {'kelas':8,'token':['B2040','8MOBL']},
+                            {'kelas':9,'token':['C1231','9RRRU']}]},
+            {'tgl':24,'sesi':[{'kelas':7,'token':['A1111','AJKJK']},
+                            {'kelas':8,'token':['B7881','8WOOW']},
+                            {'kelas':9,'token':['C3322','9HAH1']}]},
+            {'tgl':25,'sesi':[{'kelas':7,'token':['A0001','AZZZ1']},
+                            {'kelas':8,'token':['B2113','8FFFF']},
+                            {'kelas':9,'token':['C3113','9NNNN']}]}
+        ]
+
+        $("#token1").click(()=>{
+            $("#token1").text("hallo")
+        })
+
+        $("#token2").click(()=>{
+            $("#token2").text("hallo")
+        })
+
+        function getToken(kelas){
+             sesiToken.forEach((a)=>{
+                 if(a.tgl == tgl){
+                    a.sesi.forEach((b)=>{
+                        if(b.kelas == kelas){
+                            // console.log(b.token[sesi])
+                            $('button').text(b.token[sesi])
+                            $('button').attr('class', 'btn-info btn btn-lg')
+                        }
+                    })
+                }
+            })
+        }
+
+
+
+        $('#7').show();
+        $('#8').hide();
+        $('#9').hide();
+        $('#72').show();
+        $('#82').hide();
+        $('#92').hide();
+
+        $('#sesi1-tab').on('click', function (e) {
+          e.preventDefault()
+            $('#sesi1').show();
+            $('#sesi2').hide();
+            sesi = 0;
+            $('button').text("Klik token")
+            $('button').attr('class', 'btn-info btn btn-danger')
+        })
+
+        $('#sesi2-tab').on('click', function (e) {
+          e.preventDefault()
+            $('#sesi1').hide();
+            $('#sesi2').show();
+            sesi = 1;
+            $('button').text("Klik token")
+            $('button').attr('class', 'btn-info btn btn-danger')
+        })
+
+        $('#7-tab').on('click', function (e) {
+            e.preventDefault()
+            $('#7').show();
+            $('#8').hide();
+            $('#9').hide();
+            $('#72').show();
+            $('#82').hide();
+            $('#92').hide();
+            $('button').text("Klik token")
+            $('button').attr('class', 'btn-info btn btn-danger')
+        })
+        $('#8-tab').on('click', function (e) {
+            e.preventDefault()
+            $('#8').show();
+            $('#7').hide();
+            $('#9').hide();
+             $('#82').show();
+            $('#72').hide();
+            $('#92').hide();
+            $('button').text("Klik token")
+            $('button').attr('class', 'btn-info btn btn-danger')
+        })
+        $('#9-tab').on('click', function (e) {
+            e.preventDefault()
+            $('#9').show();
+            $('#7').hide();
+            $('#8').hide();
+            $('#92').show();
+            $('#72').hide();
+            $('#82').hide();
+            $('button').text("Klik token")
+            $('button').attr('class', 'btn-info btn btn-danger')
+        })
+
+        if(tgl > 1){
+            if(waktu.getHours() < 7 || waktu.getHours() > 9){
+                $("#info1").show();
+                $(".infoAbsen1").hide();
+            }else{
+                $("#info1").hide();
+                $(".infoAbsen1").show();
+            }
+            if(waktu.getHours() < 9 || waktu.getHours() > 11){
+                $("#info2").show();
+                $(".infoAbsen2").hide();
+            }else{
+                $("#info2").hide();
+                $(".infoAbsen2").show();
+            }
+        }else{
+                $("#info2").show();
+                $(".infoAbsen2").hide();
+                $("#info1").show();
+                $(".infoAbsen1").hide();
+        }
+      </script>
+   
+  </body>
+</html>
