@@ -7,7 +7,7 @@ var form = document.getElementById("formAbsen");
 var info = document.getElementById("infoJam");
 var clas = document.getElementById("clas");
 var clasToken = document.getElementById("clasToken");
-
+localStorage.clear();
 if (sekarang > 60) {
   info.innerHTML = "Sesi 1 Jam 07:10";
 }
