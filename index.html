@@ -13,11 +13,7 @@
       integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
       crossorigin="anonymous"
     />
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
-      crossorigin="anonymous"
-    ></script>
+
     <style>
     #clasToken, #clasToken1{
       width: 85px;
@@ -35,12 +31,14 @@
   </head>
   <body>
       <nav
-      class="navbar navbar-expand-lg navbar-light bg-primary"
-    >
+      class="navbar navbar-expand-lg navbar-light bg-primary">
       <div class="container">
-        <a class="navbar-brand" href="#" style="color: white;"
-          >SMP Negeri 1 Arut Selatan</a
-        >
+        <a class="navbar-brand" href="#" style="color: white;">SMP Negeri 1 Arut Selatan</a>
+        <div style="text-align: right;margin-top: 13px;">
+            <i  class="animate__animated animate__flash">
+              Token kelas <span id="clas"></span> <input value="Loading.." readonly id="clasToken" onclick="copyToken()"></input>
+            </i>
+          </div>
       </div>
     </nav>
     <div class="container">
@@ -48,6 +46,7 @@
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
           <a
+            onclick="getToken(7)"
             class="nav-link"
             id="7-tab"
             data-toggle="tab"
@@ -60,6 +59,7 @@
         </li>
         <li class="nav-item">
           <a
+            onclick="getToken(8)"
             class="nav-link"
             id="8-tab"
             data-toggle="tab"
@@ -72,6 +72,7 @@
         </li>
         <li class="nav-item">
           <a
+            onclick="getToken(9)"
             class="nav-link"
             id="9-tab"
             data-toggle="tab"
@@ -84,177 +85,16 @@
         </li>
       </ul>
 
-      <ul
-        class="nav nav-tabs"
-        style="background: rgb(201 199 255);"
-        id="myTab"
-        role="tablist"
-      >
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            id="sesi1-tab"
-            data-toggle="tab"
-            href="#"
-            role="tab"
-            aria-controls="profile"
-            aria-selected="false"
-            >Sesi 1</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            id="sesi2-tab"
-            data-toggle="tab"
-            href="#"
-            role="tab"
-            aria-controls="profile"
-            aria-selected="false"
-            >Sesi 2</a
-          >
-        </li>
-      </ul>
-
-      <div id="sesi1" class="text-center">
-        Sesi 1 Jam 07:00
-        <i style="float: right;" class="animate__animated animate__flash">
-          Token kelas <span id="clas1"></span> <input value="Loading.." readonly id="clasToken1"></input>
-      </i>
-        <div id="info1" class="container jumbotron">
-          Absen Sesi 1 Belum dibuka
-        </div>
-        <div class="infoAbsen1">
-          <div id="7">
-            <button
-              id="token7"
-              onclick="getToken(7)"
-              class="btn btn-sm btn-danger"
-              style="float: right;"
-            >
-              Klik Token
-            </button>
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLScz3UsSt6_CkwIHPHk29K9MtcxeTT-_Y5xRLpKmxPcaJg_Ffg/viewform?embedded=true"
-              width="100%"
-              height="550"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0"
-              >Loading…</iframe
-            >
-          </div>
-          <div id="8">
-            <button
-              id="token8"
-              onclick="getToken(8)"
-              class="btn btn-sm btn-danger"
-              style="float: right;"
-            >
-              Klik Token
-            </button>
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLScUjCG1HJRFr9BW0EmgoCupaDmTegQ7bnaO4c9jVPtUyCL_tw/viewform?embedded=true"
-              width="100%"
-              height="550px"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0"
-              >Loading…</iframe
-            >
-          </div>
-          <div id="9">
-            <button
-              id="token9"
-              onclick="getToken(9)"
-              class="btn btn-sm btn-danger"
-              style="float: right;"
-            >
-              Klik Token
-            </button>
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSc8NlrIasJR3INie-3Sv0Af-szJWF_sTcIz0mGDa4qEskDPvw/viewform?embedded=true"
-              width="100%"
-              height="550px"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0"
-              >Loading…</iframe
-            >
-          </div>
-        </div>
-      </div>
-
-      <!-- sesi 2 -->
-      <div id="sesi2" class="text-center">
-        Sesi 2 Jam 09:00
-        <i style="float: right;" class="animate__animated animate__flash">
-          Token kelas <span id="clas"></span> <input readonly value="Loading.." id="clasToken"></input>
-        </i>
-        <div id="info2" class="container jumbotron">
-          Absen Sesi 2 Belum dibuka
-        </div>
-        <div class="infoAbsen2">
-          <div id="72">
-            <button
-              id="token7a"
-              onclick="getToken(7)"
-              class="btn btn-sm btn-danger"
-              style="float: right;"
-            >
-              Klik Token
-            </button>
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSfGxDDdc0nGgbGbKj3J_brDzBqkyjxhtFD6DAyUi58a-mVgRQ/viewform?embedded=true"
-              width="100%"
-              height="395"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0"
-              >Loading…</iframe
-            >
-          </div>
-          <div id="82">
-            <button
-              id="token8b"
-              onclick="getToken(8)"
-              class="btn btn-sm btn-danger"
-              style="float: right;"
-            >
-              Klik Token
-            </button>
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSemj4tfiroV1oO6US1PEzT0xmGnUwKLk6TkSacV4kMH3KmeKQ/viewform?embedded=true"
-              width="100%"
-              height="395"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0"
-              >Loading…</iframe
-            >
-          </div>
-          <div id="92">
-            <button
-              id="token9b"
-              onclick="getToken(9)"
-              class="btn btn-sm btn-danger"
-              style="float: right;"
-            >
-              Klik Token
-            </button>
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSeuWnfx9sSZ2pHbu-9wmgUhtt5L5WQGdJUGxK2FynF2OJFrmA/viewform?embedded=true"
-              width="100%"
-              height="395"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0"
-              >Loading…</iframe
-            >
-          </div>
+      <div id="sesi" class="text-center">
+        <span id="infoJam"></span>
+        <div id="formAbsen" class="container jumbotron">
+          Absensi belum di buka
         </div>
       </div>
     </div>
-     <script src="./joe.js"></script>
+
+    <script src="./ucok.js">
+      
+    </script>
   </body>
 </html>
