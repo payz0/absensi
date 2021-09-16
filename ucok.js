@@ -104,7 +104,7 @@ function getToken(kelas) {
   var getToken = sesiToken[idToken].sesi.filter((a) => {
     return a.kelas == kelas;
   })[0];
-  var token;
+  var token = "Loading..";
   if (sekarang > 430 && sekarang < 540) {
     token = getToken.en[0];
     console.log("sesi 1");
@@ -112,8 +112,6 @@ function getToken(kelas) {
       "<iframe src='https://docs.google.com/forms/d/e/" +
       absen[id].form[0] +
       "/viewform?embedded=true' width='100%' height='550' frameborder='0' marginheight='0' marginwidth='0' >Loading…</iframe>";
-  } else {
-    token = "Loading ..";
   }
 
   if (sekarang > 555 && sekarang < 660) {
@@ -123,9 +121,7 @@ function getToken(kelas) {
       "<iframe src='https://docs.google.com/forms/d/e/" +
       absen[id].form[1] +
       "/viewform?embedded=true' width='100%' height='550' frameborder='0' marginheight='0' marginwidth='0' >Loading…</iframe>";
-  } else {
-    token = "Loading..";
-  }
+  } 
   setTimeout(() => {
     clasToken.disabled = false;
     clasToken.value = token;
